@@ -3,7 +3,7 @@ name: Auto Release
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
@@ -29,6 +29,6 @@ jobs:
         run: |
           git config user.email "actions@github"
           git config user.name "Github Actions"
-          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          git remote set-url origin https://x-access-token:${TOKEN_GITHUB}@github.com/${GITHUB_REPOSITORY}.git
           git add .
           git diff --quiet && git diff --staged --quiet || (git commit -m "${COMMIT_MSG}"; git push origin HEAD:${GITHUB_REF})
