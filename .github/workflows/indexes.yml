@@ -3,7 +3,7 @@ name: Generate Indexes
 on:
   push:
     branches:
-      - master  # or your default branch
+      - main
 
 jobs:
   generate:
@@ -20,19 +20,19 @@ jobs:
 
     - name: Run index generation script
       run: |
-        python scripts/script.py
+        python scripts/generate_indexes.py
 
     - name: Configure git
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-    - name: Commit changes
+    - name: Commit changes with fun message
       run: |
         git add indexes/
-        git diff-index --quiet HEAD || git commit -m "🎨✨ Wallpaper party updated! 🌟🖼️
+        git diff-index --quiet HEAD || git commit -m "🎨✨ Wallpaper party updated! 🌟🖼️"
 
-    - name: Create Pull Request
+    - name: Create Pull Request with fun title
       uses: peter-evans/create-pull-request@v5
       with:
         token: ${{ secrets.TOKEN_GITHUB }}
