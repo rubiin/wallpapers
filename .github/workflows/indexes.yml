@@ -40,4 +40,4 @@ jobs:
         branch: "update-indexes-${{ github.run_number }}"
         title: "Update Indexes"
         body: "Automatically generated indexes on push"
-        base: main
+        base: master
