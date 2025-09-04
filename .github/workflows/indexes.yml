@@ -30,14 +30,14 @@ jobs:
     - name: Commit changes
       run: |
         git add indexes/
-        git diff-index --quiet HEAD || git commit -m "Update indexes"
+        git diff-index --quiet HEAD || git commit -m "🎨✨ Wallpaper party updated! 🌟🖼️
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v5
       with:
         token: ${{ secrets.TOKEN_GITHUB }}
-        commit-message: "Update indexes"
+        commit-message: "🎨✨ Wallpaper party updated! 🌟🖼️"
         branch: "update-indexes-${{ github.run_number }}"
-        title: "Update Indexes"
-        body: "Automatically generated indexes on push"
+        title: "🎉 Automatic Wallpaper Fiesta! 🖼️"
+        body: "The indexes have been freshly baked and served hot! 🔥🍰"
         base: master
