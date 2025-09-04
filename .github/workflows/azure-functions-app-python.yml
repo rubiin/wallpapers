@@ -1,0 +1,43 @@
+name: Generate Indexes
+
+on:
+  push:
+    branches:
+      - main  # or your default branch
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Run index generation script
+      run: |
+        python scripts/script.py
+
+    - name: Configure git
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+    - name: Commit changes
+      run: |
+        git add indexes/
+        git diff-index --quiet HEAD || git commit -m "Update indexes"
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.TOKEN_GITHUB }}
+        commit-message: "Update indexes"
+        branch: "update-indexes-${{ github.run_number }}"
+        title: "Update Indexes"
+        body: "Automatically generated indexes on push"
+        base: main
