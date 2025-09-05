@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+    paths:
+      - "wallpapers/**"   # Only run if something changes inside wallpaper/
+
 
 jobs:
   generate:
