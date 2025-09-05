@@ -20,7 +20,7 @@ jobs:
 
     - name: Run index generation script
       run: |
-        python scripts/generate_indexes.py
+        python scripts/script.py
 
     - name: Configure git
       run: |
