@@ -8,8 +8,8 @@ This repository contains a curated collection of wallpapers arranged in **4×2 g
 
 | Batch | Preview | Links |
 |-------|---------|-------|
-| 1     | ![Batch 1](https://raw.githubusercontent.com/rubiin/wallpapers/master/wallpapers/first_image.jpg) | [Index 1](indexes/index_1.md) • [Index 2](indexes/index_2.md) |
-| 2     | ![Batch 2](https://raw.githubusercontent.com/rubiin/wallpapers/master/wallpapers/second_image.jpg) | [Index 3](indexes/index_3.md) • [Index 4](indexes/index_4.md) |
+| 1     |[Index 1](indexes/index_1.md) • [Index 2](indexes/index_2.md) |
+| 2     |[Index 3](indexes/index_3.md) • [Index 4](indexes/index_4.md) |
 
 ---
 
